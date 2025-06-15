@@ -42,11 +42,16 @@
         email: form.email.value
     };
 
-    const res = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-    });
+    // const res = await fetch("http://localhost:5000/api/auth/signup", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(formData)
+    // });
+const res = await fetch("https://saas-landing-0ybf.onrender.com/api/auth/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+});
 
     const data = await res.json();
 
